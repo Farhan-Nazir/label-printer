@@ -24,7 +24,7 @@ class RmaForm extends Component {
         this.state.rmaID.length > 0 ? this.setState({ isTrue: false}) : this.setState({ isTrue: true})
     }
 
-    handleOnReset = () => this.setState({ scanUnit: "", unitData: ["", "", "", "", ""], rmaID: "" })
+    handleOnReset = () => this.setState({ scanUnit: "", unitData: ["", "", "", "", ""], rmaID: "", isTrue: true })
     render() {
         const { unitData } = this.state;
         return (
