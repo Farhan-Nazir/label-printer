@@ -7,6 +7,7 @@ class RmaForm extends Component {
     state = {
         scanUnit: "",
         rmaID: "",
+        isTrue: true,
         unitData: []
     }
 
@@ -17,7 +18,11 @@ class RmaForm extends Component {
         this.setState({ unitData: [...res] })
     }
 
-    handleOnChangeRmaID = e => this.setState({ rmaID: e.target.value })
+    
+    handleOnChangeRmaID = e => {
+        this.setState({ rmaID: e.target.value })
+        this.state.rmaID.length > 0 ? this.setState({ isTrue: false}) : this.setState({ isTrue: true})
+    }
 
     handleOnReset = () => this.setState({ scanUnit: "", unitData: ["", "", "", "", ""], rmaID: "" })
     render() {
@@ -111,9 +116,9 @@ class RmaForm extends Component {
                     <br />
                     <ReactToPrint
                         copyStyles={false}
-                        trigger={() => <Button variant="contained" color="primary">
-                            Print
-  </Button>}
+                        trigger={() => <Button variant="contained" disabled={this.state.isTrue} color="primary">
+                        Print
+            </Button>}
                         content={() => this.componentRef}
                     />
 
