@@ -13,7 +13,7 @@ class PrintRmaLabel extends Component {
                     <h3>Prod-Unit: {this.props.ProdUnit}</h3>
                     <h3>C.O.O: {this.props.Country}</h3>
                     <br />
-                    <QRCode size={84} value={this.props.RMAID} />
+                    <QRCode size={84} value={`rma${this.props.RMAID}`} />
                 </div>
             </Paper>
 
