@@ -12,7 +12,7 @@ class PrintRmaLabel extends Component {
                         C.O.O: {this.props.Country}</h3>
                 </div>
                 <div style={{ paddingLeft: "20px" }}>
-                    <QRCode size={84} value={this.props.RMAID} />
+                    <QRCode size={84} value={"rma" + this.props.RMAID} />
                 </div>
             </div>
 
